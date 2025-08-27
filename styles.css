@@ -1,0 +1,29 @@
+html {
+    font-family: "Arial", sans-serif; 
+    font-size: 16px; 
+    color: #333;
+    line-height: 1.6;
+}
+
+#table-of-contents {
+  list-style-type: none;
+}
+
+#toc-container {
+    float: left; /* Floats the TOC to the left */
+    width: 20%; /* Adjust width as needed */
+    position: fixed; /* Fixes divider in spot */
+}
+
+#main-content {
+    margin-left: 21%; /* Creates space for the floated TOC, adjust based on TOC width + margin */
+}
+
+#title-header {
+    font-size: 20px;
+}
+
+#table-of-contents a {
+    color: #000000;
+    text-decoration: none;
+}

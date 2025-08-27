@@ -1,0 +1,64 @@
+Valorant: Technical Documentation
+1. Overview
+
+Valorant is a competitive 5v5 first-person shooter developed by Riot Games, designed with a strong emphasis on precise gunplay, tactical execution, and teamwork. Each player chooses from a roster of Agents, each possessing unique abilities that impact gameplay strategy. With a growing esports ecosystem, Valorant is optimized for low-latency online play and reliable performance on a broad range of hardware, making it accessible to both casual and professional players. The game’s infrastructure emphasizes fairness, security, and scalability.
+
+2. System Requirements
+
+To ensure optimal gameplay, Valorant provides both minimum and recommended system specifications. At the minimum, the game supports Windows 7, 8, or 10 (64-bit), an Intel Core 2 Duo E8400 CPU, Intel HD 3000 graphics, 4 GB of RAM, 1 GB of VRAM, and DirectX 11. For a smoother and more competitive experience, it is recommended to use at least an Intel i5-9400F processor, an NVIDIA GTX 1050 Ti GPU or better, 8 GB of RAM, and a broadband internet connection. These specifications reflect Riot’s goal to ensure high performance even on lower-end systems.
+
+3. Architecture
+
+Valorant utilizes a client-server architecture, where all core game logic is executed server-side to prevent client-side manipulation and ensure fair play. The client is primarily responsible for rendering graphics, capturing player input, and managing the user interface. The backend ecosystem includes the game client, matchmaking servers, real-time game servers, the Vanguard anti-cheat driver, and a content delivery network (CDN) for distributing updates and assets. This modular architecture supports global scalability and robust security.
+
+4. Game Engine
+
+Valorant is built on a heavily customized version of Unreal Engine 4. Riot has modified the engine to improve performance and responsiveness, particularly in competitive scenarios. This includes custom netcode optimized for responsiveness under 35 milliseconds, a highly accurate hit registration system, and rendering optimizations for low-spec hardware and high refresh rate monitors. These engine-level modifications are critical to delivering the fast-paced, low-latency gameplay that Valorant is known for.
+
+5. Core Game Components
+
+The game consists of several key components that define its structure and gameplay. Agents form the character system and come with distinct ability trees that influence tactics and team roles. A wide variety of weapons, each with unique recoil patterns, spread characteristics, and damage models, provide a solid foundation for skilled gunplay. Agent abilities offer utility that supports map control, vision, mobility, or disruption. The map system features modular level designs with bomb sites, choke points, and sightlines that enhance strategic play. Matchmaking is handled through an ELO-based rating system that aims to ensure fair and balanced matches. The user interface (UI) is streamlined, providing players with crucial information such as HUD elements, kill feeds, and ability indicators in a clean, readable format.
+
+6. Networking
+
+Valorant employs a custom network architecture built on the UDP protocol, enhanced with proprietary reliability and security layers. The game runs at a high tick rate of 128 ticks per second on its servers, which ensures smooth state updates and responsiveness. Client-side prediction is implemented to reduce the perceived impact of latency, while server-side lag compensation ensures hit registration remains accurate even under suboptimal network conditions. Voice communication is supported through an integrated VoIP solution, likely using third-party SDKs such as Vivox or similar systems.
+
+7. Anti-Cheat System
+
+Valorant features Vanguard, Riot’s proprietary anti-cheat system, which includes a kernel-level driver. This system provides deep monitoring capabilities at the OS level to detect and prevent unauthorized memory access, hardware manipulation, and cheating software. Vanguard runs from system boot, allowing it to monitor suspicious activity even before the game starts. It has sparked debate due to its rootkit-like behavior but is central to Riot’s zero-tolerance approach toward cheating. The system is updated regularly to maintain effectiveness against evolving threats.
+
+8. Security Considerations
+
+Riot Games implements a multi-layered security model to protect Valorant and its player base. Game binaries are obfuscated and encrypted to resist reverse engineering. Matchmaking servers and game traffic are secured, and all communications are authenticated. Vanguard is frequently updated with new detection rules to stay ahead of cheats and exploits. In addition, Riot conducts regular internal vulnerability assessments and external penetration testing to patch potential attack vectors proactively.
+
+9. Patch and Update System
+
+Valorant uses Riot’s custom launcher to deliver game patches and updates. The system supports both incremental updates and full patch downloads, with delta patching used to reduce file sizes and speed up downloads. All patch content is delivered via a CDN infrastructure optimized for global accessibility, minimizing downtime and ensuring quick updates even during peak periods. This system allows Riot to iterate quickly and maintain live service availability.
+
+10. Build and Deployment Pipeline
+
+The development team utilizes continuous integration and deployment (CI/CD) tools such as Jenkins or TeamCity in conjunction with the Unreal Build System (UBT). Riot also employs internal tools to manage assets and pipeline automation. New builds go through a sequence of internal QA, deployment to a Public Beta Environment (PBE), and finally, staggered rollout to live production environments by region. This approach ensures stability and minimizes the impact of regressions or live bugs.
+
+11. APIs and Integrations
+
+Valorant integrates with both external and internal systems to enhance player experience and backend operations. The Riot Games Developer API provides access to match history, player stats, and leaderboard data for approved developers. The game is also integrated with platforms like Twitch for drops and live event tracking. Internally, Riot uses telemetry systems to collect gameplay data for analytics, balance decisions, and player behavior insights. Custom tools are employed for patch preparation and agent tuning.
+
+12. Logging and Monitoring
+
+All matches are logged in real-time, capturing player actions, combat events, damage histories, and movement data. These logs are analyzed to identify trends, exploits, and bugs. Telemetry feeds into analytics platforms that generate heatmaps, engagement graphs, and balance statistics. For infrastructure monitoring, Riot likely uses observability tools such as Prometheus and Grafana to monitor server health, network performance, and service uptime.
+
+13. Testing
+
+Valorant’s testing strategy includes a combination of automated and manual processes. Automated unit and integration tests are conducted via Unreal’s testing framework to validate core game systems and prevent regressions. Manual quality assurance focuses on playtesting, map exploits, ability abuse scenarios, and overall balance testing. Load testing simulates real-world match conditions to validate server scalability. Security testing is performed through frequent penetration tests to validate the effectiveness of Vanguard and other defense mechanisms.
+
+14. Appendix
+
+Glossary
+
+Tickrate: The number of updates a server sends per second; in Valorant’s case, 128.
+
+ELO: A rating system used to calculate the relative skill levels of players.
+
+Hitbox: A region defined on a character model that can receive damage from projectiles.
+
+Netcode: The collection of programming logic responsible for managing online synchronization and communication in multiplayer games.
