@@ -8,202 +8,248 @@
     <link href="./styles.css" rel="stylesheet">
 </head>
 
-<div id="toc-container">
+<nav id="navbar">
     <!--Main Header-->
-    <h1 id="title-header">Valorant Documentation</h1>
-
+    <header id="title-header">Valorant Documentation</header>
     <!--List for Links to Point To Sections on Page-->
-    <ol id="table-of-contents">
-        <li><a href="#overview"">Overview</a></li>
-    <li><a href=" #system-requirements"">System Requirements</a></li>
-        <li><a href="#architecture"">Architecture</a></li>
-    <li><a href=" #game-engine"">Game Engine</a></li>
-        <li><a href="#core-game-components"">Core Game Components</a></li>
-    <li><a href=" #networking"">Networking</a></li>
-        <li><a href="#anti-cheat-system"">Anti-Cheat System</a></li>
-    <li><a href=" #security-considerations"">Security Considerations</a></li>
-        <li><a href="#patch-and-update-system"">Patch and Update System</a></li>
-    <li><a href=" #build-and-deployment-pipeline"">Build and Deployment Pipeline</a></li>
-        <li><a href="#apis-and-integrations"">APIs and Integrations</a></li>
-    <li><a href=" #logging-and-monitoring"">Logging and Monitoring</a></li>
-        <li><a href="#testing"">Testing</a></li>
-    <li><a href=" #appendix"">Appendix</a></li>
-    </ol>
-</div>
+    <ul id="table-of-contents">
+        <li><a href="#Overview" class="nav-link">Overview</a></li>
+        <li><a href="#System_Requirements" class="nav-link">System Requirements</a></li>
+        <li><a href="#Architecture" class="nav-link">Architecture</a></li>
+        <li><a href="#Game_Engine" class="nav-link">Game Engine</a></li>
+        <li><a href="#Core_Game_Components" class="nav-link">Core Game Components</a></li>
+        <li><a href="#Networking" class="nav-link">Networking</a></li>
+        <li><a href="#Anti-Cheat_System" class="nav-link">Anti-Cheat System</a></li>
+        <li><a href="#Security_Considerations" class="nav-link">Security Considerations</a></li>
+        <li><a href="#Patch_and_Update_System" class="nav-link">Patch and Update System</a></li>
+        <li><a href="#Build_and_Deployment_Pipeline" class="nav-link">Build and Deployment Pipeline</a></li>
+        <li><a href="#APIs_and_Integrations" class="nav-link">APIs and Integrations</a></li>
+        <li><a href="#Logging_and_Monitoring" class="nav-link">Logging and Monitoring</a></li>
+        <li><a href="#Testing" class="nav-link">Testing</a></li>
+        <li><a href="#Appendix" class="nav-link">Appendix</a></li>
+    </ul>
+</nav>
 
 <!--Main Doc Excludes Table of Contents-->
 
 <body>
     <div id="main-content">
         <main id="main-doc">
-            <section id="overview">
-                <h2>Overview</h2>
-                <p>Valorant is a competitive 5v5 first-person shooter focused on precise gunplay, strategic execution,
+            <section id="Overview" class="main-section">
+                <header>Overview</header>
+                <p>Valorant is a competitive 5v5 first-person shooter focused on precise gunplay, strategic
+                    execution,
                     and
-                    team coordination. Each player selects an Agent with unique abilities. The game has a strong esports
+                    team coordination. Each player selects an Agent with unique abilities. The game has a strong
+                    esports
                     focus and is optimized for low-latency competitive play.</p>
             </section>
 
-            <section id="system-requirements">
-                <h2>System Requirements</h2>
-                <p>Minimum Requirements</p>
-                <p>OS: Windows 7/8/10 64-bit</p>
-                <p>CPU: Intel Core 2 Duo E8400</p>
-                <p>GPU: Intel HD 3000</p>
-                <p>RAM: 4 GB</p>
-                <p>VRAM: 1 GB</p>
-                <p>DirectX: Version 11</p>
-                <p>Recommended Requirements</p>
-                <p>CPU: Intel i5-9400F</p>
-                <p>GPU: GTX 1050 Ti or better</p>
-                <p>RAM: 8 GB</p>
-                <p>Network: Broadband Internet connection</p>
+            <section id="System_Requirements" class="main-section">
+                <header>System Requirements</header>
+                <code>Minimum Requirements</code>
+                <code>OS: Windows 7/8/10 64-bit</code>
+                <code>CPU: Intel Core 2 Duo E8400</code>
+                <code>GPU: Intel HD 3000</code>
+                <code>RAM: 4 GB</code>
+                <code>VRAM: 1 GB</code>
+                <code>DirectX: Version 11</code>
+                <code>Recommended Requirements</code>
+                <code>CPU: Intel i5-9400F</code>
+                <code>GPU: GTX 1050 Ti or better</code>
+                <code>RAM: 8 GB</code>
+                <code>Network: Broadband Internet connection</code>
             </section>
 
-            <section id="architecture">
-                <h2>Architecture</h2>
-                <p>Valorant utilizes a client-server architecture, where all core game logic is executed server-side to
-                    prevent client-side manipulation and ensure fair play. The client is primarily responsible for
+            <section id="Architecture" class="main-section">
+                <header>Architecture</header>
+                <p>Valorant utilizes a client-server architecture, where all core game logic is executed
+                    server-side to
+                    prevent client-side manipulation and ensure fair play. The client is primarily responsible
+                    for
                     rendering
-                    graphics, capturing player input, and managing the user interface. The backend ecosystem includes
+                    graphics, capturing player input, and managing the user interface. The backend ecosystem
+                    includes
                     the
-                    game client, matchmaking servers, real-time game servers, the Vanguard anti-cheat driver, and a
+                    game client, matchmaking servers, real-time game servers, the Vanguard anti-cheat driver,
+                    and a
                     content
-                    delivery network (CDN) for distributing updates and assets. This modular architecture supports
+                    delivery network (CDN) for distributing updates and assets. This modular architecture
+                    supports
                     global
                     scalability and robust security.</p>
             </section>
 
-            <section id="game-engine">
-                <h2>Game Engine</h2>
-                <p>Valorant is built on a heavily customized version of Unreal Engine 4. Riot has modified the engine to
-                    improve performance and responsiveness, particularly in competitive scenarios. This includes custom
-                    netcode optimized for responsiveness under 35 milliseconds, a highly accurate hit registration
+            <section id="Game_Engine" class="main-section">
+                <header>Game Engine</header>
+                <p>Valorant is built on a heavily customized version of Unreal Engine 4. Riot has modified the
+                    engine to
+                    improve performance and responsiveness, particularly in competitive scenarios. This includes
+                    custom
+                    netcode optimized for responsiveness under 35 milliseconds, a highly accurate hit
+                    registration
                     system,
-                    and rendering optimizations for low-spec hardware and high refresh rate monitors. These engine-level
-                    modifications are critical to delivering the fast-paced, low-latency gameplay that Valorant is known
+                    and rendering optimizations for low-spec hardware and high refresh rate monitors. These
+                    engine-level
+                    modifications are critical to delivering the fast-paced, low-latency gameplay that Valorant
+                    is known
                     for.</p>
             </section>
 
-            <section id="core-game-components">
-                <h2>Core Game Components</h2>
-                <p>The game consists of several key components that define its structure and gameplay. Agents form the
-                    character system and come with distinct ability trees that influence tactics and team roles. A wide
-                    variety of weapons, each with unique recoil patterns, spread characteristics, and damage models,
+            <section id="Core_Game_Components" class="main-section">
+                <header>Core Game Components</header>
+                <p>The game consists of several key components that define its structure and gameplay. Agents
+                    form the
+                    character system and come with distinct ability trees that influence tactics and team roles.
+                    A wide
+                    variety of weapons, each with unique recoil patterns, spread characteristics, and damage
+                    models,
                     provide
-                    a solid foundation for skilled gunplay. Agent abilities offer utility that supports map control,
+                    a solid foundation for skilled gunplay. Agent abilities offer utility that supports map
+                    control,
                     vision,
-                    mobility, or disruption. The map system features modular level designs with bomb sites, choke
+                    mobility, or disruption. The map system features modular level designs with bomb sites,
+                    choke
                     points,
-                    and sightlines that enhance strategic play. Matchmaking is handled through an ELO-based rating
+                    and sightlines that enhance strategic play. Matchmaking is handled through an ELO-based
+                    rating
                     system
-                    that aims to ensure fair and balanced matches. The user interface (UI) is streamlined, providing
+                    that aims to ensure fair and balanced matches. The user interface (UI) is streamlined,
+                    providing
                     players
-                    with crucial information such as HUD elements, kill feeds, and ability indicators in a clean,
+                    with crucial information such as HUD elements, kill feeds, and ability indicators in a
+                    clean,
                     readable
                     format.</p>
             </section>
 
-            <section id="networking">
-                <h2>Networking</h2>
-                <p>Valorant employs a custom network architecture built on the UDP protocol, enhanced with proprietary
-                    reliability and security layers. The game runs at a high tick rate of 128 ticks per second on its
+            <section id="Networking" class="main-section">
+                <header>Networking</header>
+                <p>Valorant employs a custom network architecture built on the UDP protocol, enhanced with
+                    proprietary
+                    reliability and security layers. The game runs at a high tick rate of 128 ticks per second
+                    on its
                     servers, which ensures smooth state updates and responsiveness. Client-side prediction is
                     implemented to
-                    reduce the perceived impact of latency, while server-side lag compensation ensures hit registration
-                    remains accurate even under suboptimal network conditions. Voice communication is supported through
+                    reduce the perceived impact of latency, while server-side lag compensation ensures hit
+                    registration
+                    remains accurate even under suboptimal network conditions. Voice communication is supported
+                    through
                     an
-                    integrated VoIP solution, likely using third-party SDKs such as Vivox or similar systems.</p>
+                    integrated VoIP solution, likely using third-party SDKs such as Vivox or similar systems.
+                </p>
             </section>
 
-            <section id="anti-cheat-system">
-                <h2>Anti-Cheat System</h2>
-                <p>Valorant features Vanguard, Riot’s proprietary anti-cheat system, which includes a kernel-level
+            <section id="Anti-Cheat_System" class="main-section">
+                <header>Anti-Cheat System</header>
+                <p>Valorant features Vanguard, Riot’s proprietary anti-cheat system, which includes a
+                    kernel-level
                     driver.
-                    This system provides deep monitoring capabilities at the OS level to detect and prevent unauthorized
+                    This system provides deep monitoring capabilities at the OS level to detect and prevent
+                    unauthorized
                     memory access, hardware manipulation, and cheating software. Vanguard runs from system boot,
                     allowing it
                     to monitor suspicious activity even before the game starts. It has sparked debate due to its
-                    rootkit-like behavior but is central to Riot’s zero-tolerance approach toward cheating. The system
+                    rootkit-like behavior but is central to Riot’s zero-tolerance approach toward cheating. The
+                    system
                     is
                     updated regularly to maintain effectiveness against evolving threats.</p>
             </section>
 
-            <section id="security-considerations">
-                <h2>Security Considerations</h2>
-                <p>Riot Games implements a multi-layered security model to protect Valorant and its player base. Game
-                    binaries are obfuscated and encrypted to resist reverse engineering. Matchmaking servers and game
-                    traffic are secured, and all communications are authenticated. Vanguard is frequently updated with
+            <section id="Security_Considerations" class="main-section">
+                <header>Security Considerations</header>
+                <p>Riot Games implements a multi-layered security model to protect Valorant and its player base.
+                    Game
+                    binaries are obfuscated and encrypted to resist reverse engineering. Matchmaking servers and
+                    game
+                    traffic are secured, and all communications are authenticated. Vanguard is frequently
+                    updated with
                     new
-                    detection rules to stay ahead of cheats and exploits. In addition, Riot conducts regular internal
+                    detection rules to stay ahead of cheats and exploits. In addition, Riot conducts regular
+                    internal
                     vulnerability assessments and external penetration testing to patch potential attack vectors
                     proactively.</p>
             </section>
 
-            <section id="patch-and-update-system">
-                <h2>Patch and Update System</h2>
-                <p>Valorant uses Riot’s custom launcher to deliver game patches and updates. The system supports both
-                    incremental updates and full patch downloads, with delta patching used to reduce file sizes and
+            <section id="Patch_and_Update_System" class="main-section">
+                <header>Patch and Update System</header>
+                <p>Valorant uses Riot’s custom launcher to deliver game patches and updates. The system supports
+                    both
+                    incremental updates and full patch downloads, with delta patching used to reduce file sizes
+                    and
                     speed up
                     downloads. All patch content is delivered via a CDN infrastructure optimized for global
                     accessibility,
-                    minimizing downtime and ensuring quick updates even during peak periods. This system allows Riot to
+                    minimizing downtime and ensuring quick updates even during peak periods. This system allows
+                    Riot to
                     iterate quickly and maintain live service availability.</p>
             </section>
 
-            <section id="build-and-deployment-pipeline">
-                <h2>Build and Deployment Pipeline</h2>
-                <p>Build Tools</p>
-                <p>Jenkins / TeamCity for CI/CD</p>
-                <p>Unreal Build System (UBT)</p>
-                <p>Riot’s internal asset pipeline tools</p>
-                <p>Deployment</p>
-                <p>Internal QA → PBE (Public Beta Environment) → Production</p>
-                <p>Staggered rollouts to regions</p>
+            <section id="Build_and_Deployment_Pipeline" class="main-section">
+                <header>Build and Deployment Pipeline</header>
+                <code>Build Tools</code>
+                <code>Jenkins / TeamCity for CI/CD</code>
+                <code>Unreal Build System (UBT)</code>
+                <code>Riot’s internal asset pipeline tools</code>
+                <code>Deployment</code>
+                <code>Internal QA → PBE (Public Beta Environment) → Production</code>
+                <code>Staggered rollouts to regions</code>
             </section>
 
-            <section id="apis-and-integrations">
-                <h2>APIs and Integrations</h2>
-                <p>Valorant integrates with both external and internal systems to enhance player experience and backend
+            <section id="APIs_and_Integrations" class="main-section">
+                <header>APIs and Integrations</header>
+                <p>Valorant integrates with both external and internal systems to enhance player experience and
+                    backend
                     operations. The Riot Games Developer API provides access to match history, player stats, and
                     leaderboard
-                    data for approved developers. The game is also integrated with platforms like Twitch for drops and
+                    data for approved developers. The game is also integrated with platforms like Twitch for
+                    drops and
                     live
-                    event tracking. Internally, Riot uses telemetry systems to collect gameplay data for analytics,
+                    event tracking. Internally, Riot uses telemetry systems to collect gameplay data for
+                    analytics,
                     balance
-                    decisions, and player behavior insights. Custom tools are employed for patch preparation and agent
+                    decisions, and player behavior insights. Custom tools are employed for patch preparation and
+                    agent
                     tuning.</p>
             </section>
 
-            <section id="logging-and-monitoring">
-                <h2>Logging and Monitoring</h2>
-                <p>All matches are logged in real-time, capturing player actions, combat events, damage histories, and
-                    movement data. These logs are analyzed to identify trends, exploits, and bugs. Telemetry feeds into
+            <section id="Logging_and_Monitoring" class="main-section">
+                <header>Logging and Monitoring</header>
+                <p>All matches are logged in real-time, capturing player actions, combat events, damage
+                    histories, and
+                    movement data. These logs are analyzed to identify trends, exploits, and bugs. Telemetry
+                    feeds into
                     analytics platforms that generate heatmaps, engagement graphs, and balance statistics. For
-                    infrastructure monitoring, Riot likely uses observability tools such as Prometheus and Grafana to
+                    infrastructure monitoring, Riot likely uses observability tools such as Prometheus and
+                    Grafana to
                     monitor server health, network performance, and service uptime.</p>
             </section>
 
-            <section id="testing">
-                <h2>Testing</h2>
-                <p>Valorant’s testing strategy includes a combination of automated and manual processes. Automated unit
+            <section id="Testing" class="main-section">
+                <header>Testing</header>
+                <p>Valorant’s testing strategy includes a combination of automated and manual processes.
+                    Automated unit
                     and
-                    integration tests are conducted via Unreal’s testing framework to validate core game systems and
+                    integration tests are conducted via Unreal’s testing framework to validate core game systems
+                    and
                     prevent
-                    regressions. Manual quality assurance focuses on playtesting, map exploits, ability abuse scenarios,
+                    regressions. Manual quality assurance focuses on playtesting, map exploits, ability abuse
+                    scenarios,
                     and
-                    overall balance testing. Load testing simulates real-world match conditions to validate server
-                    scalability. Security testing is performed through frequent penetration tests to validate the
+                    overall balance testing. Load testing simulates real-world match conditions to validate
+                    server
+                    scalability. Security testing is performed through frequent penetration tests to validate
+                    the
                     effectiveness of Vanguard and other defense mechanisms.</p>
             </section>
 
-            <section id="appendix">
-                <h2>Appendix</h2>
-                <p>Glossary</p>
-                <p>Tickrate: Frequency of server updates per second</p>
-                <p>ELO: Rating system for player skill</p>
-                <p>Hitbox: A model defining the area where a player can be hit</p>
-                <p>Netcode: Programming responsible for synchronizing multiplayer game data</p>
+            <section id="Appendix" class="main-section">
+                <header>Appendix</header>
+                <li><code>Glossary</code></li>
+                <li><code>Tickrate: Frequency of server updates per second</code></li>
+                <li><code>ELO: Rating system for player skill</code></li>
+                <li><code>Hitbox: A model defining the area where a player can be hit</code></li>
+                <li><code>Netcode: Programming responsible for synchronizing multiplayer game data</code></li>
             </section>
 
         </main>

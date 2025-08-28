@@ -9,7 +9,7 @@ html {
   list-style-type: none;
 }
 
-#toc-container {
+#navbar {
     float: left; /* Floats the TOC to the left */
     width: 20%; /* Adjust width as needed */
     position: fixed; /* Fixes divider in spot */
@@ -26,4 +26,13 @@ html {
 #table-of-contents a {
     color: #000000;
     text-decoration: none;
+}
+
+@media screen and (max-width: 480px) {
+  #navbar {
+    opacity: 0;
+  }
+  #navbar li {
+    pointer-events: none;
+  }
 }
