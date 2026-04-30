@@ -16,7 +16,7 @@ The page uses a fixed navigation sidebar to allow smooth jumping between section
 - Structuring large webpages using **semantic HTML sections**  
 - Creating a **fixed sidebar navigation system**  
 - Using **anchor links for in-page navigation**  
-- Organizing complex content into clear documentation format  
+- Organizing complex content into a clear documentation format  
 - Applying **CSS layout techniques (float, fixed positioning, margins)**  
 - Using **media queries for responsive design adjustments**  
 - Improving readability with typography and spacing  
